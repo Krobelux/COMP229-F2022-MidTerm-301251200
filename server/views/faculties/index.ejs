@@ -8,9 +8,8 @@
       <!-- ------------------------ -->
       <!-- FIX THE ADD BUTTON BELOW -->
       <!-- ------------------------ -->
-      <a href="" class="btn btn-primary"
-        ><i class="fa fa-plus"></i> Add a faculty</a
-      >
+      <a href="/server/views/faculties/add.ejs" class="btn btn-primary"><i class="fa fa-plus"></i> Add a faculty</a>
+      <!-- Added route in href to fix button-->
 
       <br />
       <div class="table-responsive">
@@ -34,21 +33,31 @@
               <td class="text-center"><%= faculties[count].Subject %></td>
 
               <td class="text-center">
+                <a href="/faculties/details/<%= faculties[count]._id %>" class="btn btn-primary btn-sm">
+                <i class="fas fa-info"></i> Edit</a>
+                <!-- Added route in href and class info to fix button-->
                 <!-- ------------------------ -->
                 <!-- ADD the EDIT BUTTON HERE -->
                 <!-- ------------------------ -->
               </td>
+              
+              <td class="text-center">
+                <!-- ------------------------ -->
+                <!-- ADD the EDIT BUTTON HERE (Do you mean Delete button...?) -->
+                <!-- ------------------------ -->
+                <!-- Added the href to the delete + fixed the delete button location -->
+                <a href="/faculties/delete/<%= faculties[count]._id %>" class="btn btn-warning btn-sm">
+                <i class="fas fa-trash"></i> Delete</a></td>
             </tr>
             <% } %>
           </tbody>
         </table>
       </div>
-      <!-- ------------------------ -->
-      <!-- ADD the EDIT BUTTON HERE -->
-      <!-- ------------------------ -->
       
-      <a href="" class="btn btn-warning btn-sm">
-        <i class="fas fa-trash"></i> Delete</a>
+      
+
+
+
     </main>
 
       <div class="col-md-offset-1 col-md-10 text-center">
